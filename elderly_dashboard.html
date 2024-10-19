@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Elderly Dashboard - Care Assistance</title>
+		<link rel="stylesheet" href="ed.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Welcome, <span id="userName">John Doe</span></h1>
+			<nav>
+				<ul>
+					<li><a href="#health">Health</a></li>
+					<li><a href="#schedule">Schedule</a></li>
+					<li><a href="#communication">Communication</a></li>
+					<li><a href="#activities">Activities</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="health" class="dashboard-section">
+				<h2>Health Monitoring</h2>
+				<div class="health-stats">
+					<div class="stat">
+						<h3>Heart Rate</h3>
+						<p id="heartRate">72 bpm</p>
+					</div>
+					<div class="stat">
+						<h3>Blood Pressure</h3>
+						<p id="bloodPressure">120/80 mmHg</p>
+					</div>
+					<div class="stat">
+						<h3>Steps Today</h3>
+						<p id="steps">3,500</p>
+					</div>
+				</div>
+			</section>
+			<section id="schedule" class="dashboard-section">
+				<h2>Daily Schedule</h2>
+				<ul id="scheduleList" class="schedule-list">
+					<li>9:00 AM - Take morning medication</li>
+					<li>10:30 AM - Light exercise</li>
+					<li>12:00 PM - Lunch</li>
+					<li>3:00 PM - Doctor's appointment</li>
+				</ul>
+			</section>
+			<section id="communication" class="dashboard-section">
+				<h2>Communication Hub</h2>
+				<button class="comm-button" onclick="alert('Video call feature coming soon!')">Video Call</button>
+				<button class="comm-button" onclick="alert('Voice call feature coming soon!')">Voice Call</button>
+				<button class="comm-button" onclick="alert('Messaging feature coming soon!')">Send Message</button>
+			</section>
+			<section id="activities" class="dashboard-section">
+				<h2>Activities</h2>
+				<button class="activity-button" onclick="alert('Memory games coming soon!')">Memory Games</button>
+				<button class="activity-button" onclick="alert('Brain exercises coming soon!')">Brain Exercises</button>
+				<button class="activity-button" onclick="alert('Social forum coming soon!')">Social Forum</button>
+			</section>
+		</main>
+		<footer>
+			<button id="emergencyButton" class="emergency-button">SOS Emergency</button>
+		</footer>
+		<script src="script.js"></script>
+	</body>
+</html>

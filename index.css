@@ -1,0 +1,202 @@
+/* styles.css */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+
+body {
+	background: black;
+	color: #f1f1f1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	overflow: hidden; /* Prevent scrollbars from showing */
+	position: relative; /* For positioning the shooting stars */
+}
+select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.2);
+	color: #ffffff; /* Text color for the select dropdown */
+	transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Styling options in Firefox */
+select option {
+	color: #00d4ff; /* Default color for options */
+	background-color: black; /* Background color for options */
+}
+
+/* Change color when the select is focused */
+select:focus {
+	background: rgba(255, 255, 255, 0.3);
+	transform: scale(1.02);
+}
+
+/* Change color of options when hovered (not all browsers support this) */
+select:hover {
+	color: #00ffcc; /* Change text color on hover */
+}
+
+.container {
+	background: rgba(20, 20, 20, 0.9); /* Darker background for better contrast */
+	border-radius: 12px;
+	padding: 2rem;
+	width: 90%;
+	max-width: 400px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(8px);
+	animation: fadeIn 1s ease-in-out;
+	position: relative; /* Make sure the container has a position */
+	z-index: 1; /* Ensure it's above the stars */
+}
+
+h1 {
+	margin-bottom: 1.5rem;
+	font-size: 2.5rem;
+	color: #00d4ff;
+}
+
+.login-form h2 {
+	margin-bottom: 1rem;
+	font-size: 1.8rem;
+	color: #00ffcc;
+}
+
+input,
+select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+	color: #ffffff; /* White text for inputs */
+	transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input:focus,
+select:focus {
+	background: rgba(255, 255, 255, 0.3);
+	transform: scale(1.02);
+}
+
+button {
+	width: 100%;
+	padding: 10px;
+	background: linear-gradient(90deg, #00d4ff, #00ffcc);
+	border: none;
+	border-radius: 6px;
+	color: #000000; /* Black text for better contrast */
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+	background: rgba(255, 255, 255, 0.3); /* Hover effect for buttons */
+	transform: scale(1.05);
+}
+
+p {
+	margin-top: 1rem;
+	font-size: 0.9rem;
+}
+
+a {
+	color: #00d4ff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #00ffcc;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Shooting stars animation */
+@keyframes shootingStar {
+	from {
+		transform: translateY(-100vh) translateX(0);
+		opacity: 0.7;
+	}
+	to {
+		transform: translateY(100vh) translateX(100vw);
+		opacity: 0;
+	}
+}
+
+.star {
+	position: absolute;
+	background: white;
+	border-radius: 50%;
+	opacity: 0;
+	animation: shootingStar linear forwards;
+}
+
+@keyframes spawnStar {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+/* Generating shooting stars */
+.star:nth-child(1) {
+	width: 2px;
+	height: 10px;
+	top: 20%;
+	left: 10%;
+	animation: shootingStar 1.5s 0s infinite;
+}
+.star:nth-child(2) {
+	width: 2px;
+	height: 10px;
+	top: 40%;
+	left: 50%;
+	animation: shootingStar 1.5s 0.5s infinite;
+}
+.star:nth-child(3) {
+	width: 2px;
+	height: 10px;
+	top: 70%;
+	left: 80%;
+	animation: shootingStar 1.5s 1s infinite;
+}
+.star:nth-child(4) {
+	width: 2px;
+	height: 10px;
+	top: 10%;
+	left: 20%;
+	animation: shootingStar 1.5s 1.5s infinite;
+}
+.star:nth-child(5) {
+	width: 2px;
+	height: 10px;
+	top: 50%;
+	left: 80%;
+	animation: shootingStar 1.5s 2s infinite;
+}

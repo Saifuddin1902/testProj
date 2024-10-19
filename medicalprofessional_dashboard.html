@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Medical Professional Dashboard - Care Assistance</title>
+		<link rel="stylesheet" href="md.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Medical Professional Dashboard</h1>
+			<nav>
+				<ul>
+					<li><a href="#patientList">Patient List</a></li>
+					<li><a href="#reports">Reports</a></li>
+					<li><a href="#medications">Medications</a></li>
+					<li><a href="#appointments">Appointments</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="patientList" class="dashboard-section">
+				<h2>Patients</h2>
+				<ul id="patientListItems">
+					<li onclick="viewPatientProfile('John Doe')">John Doe - Age: 75</li>
+					<li onclick="viewPatientProfile('Jane Smith')">Jane Smith - Age: 68</li>
+					<li onclick="viewPatientProfile('Robert Lee')">Robert Lee - Age: 72</li>
+				</ul>
+			</section>
+			<section id="reports" class="dashboard-section">
+				<h2>Patient Reports</h2>
+				<button onclick="viewReport('John Doe')">View Report for John Doe</button>
+				<button onclick="viewReport('Jane Smith')">View Report for Jane Smith</button>
+				<button onclick="viewReport('Robert Lee')">View Report for Robert Lee</button>
+			</section>
+			<section id="medications" class="dashboard-section">
+				<h2>Medications</h2>
+				<button onclick="manageMedications()">Manage Medications</button>
+			</section>
+			<section id="appointments" class="dashboard-section">
+				<h2>Upcoming Appointments</h2>
+				<ul id="appointmentList">
+					<li>John Doe - Doctor's appointment on 10/20/2024</li>
+					<li>Jane Smith - Follow-up on 10/22/2024</li>
+				</ul>
+				<button onclick="scheduleAppointment()">Schedule New Appointment</button>
+			</section>
+		</main>
+		<footer>
+			<button id="logEntryButton" onclick="openLogEntry()">Add Log Entry</button>
+		</footer>
+
+		<!-- Dialogs -->
+		<div id="reportDialog" class="dialog" hidden>
+			<h3>Patient Report for <span id="reportPatientName"></span></h3>
+			<p id="reportDetails">Report details go here...</p>
+			<button onclick="closeReportDialog()">Close</button>
+		</div>
+
+		<div id="logEntryDialog" class="dialog" hidden>
+			<form id="logEntryForm">
+				<h3>Add Log Entry</h3>
+				<textarea id="logEntryText" placeholder="Enter log entry details..."></textarea>
+				<button type="submit">Submit Log</button>
+			</form>
+		</div>
+
+		<div id="medicationDialog" class="dialog" hidden>
+			<h3>Manage Medications</h3>
+			<form id="medicationForm">
+				<input type="text" id="medicationName" placeholder="Medication Name" required />
+				<input type="text" id="dosage" placeholder="Dosage" required />
+				<button type="submit">Add Medication</button>
+			</form>
+			<h4>Current Medications</h4>
+			<ul id="medicationList"></ul>
+		</div>
+
+		<div id="appointmentDialog" class="dialog" hidden>
+			<h3>Schedule Appointment</h3>
+			<form id="appointmentForm">
+				<input type="text" id="appointmentPatient" placeholder="Patient Name" required />
+				<input type="date" id="appointmentDate" required />
+				<button type="submit">Schedule Appointment</button>
+			</form>
+		</div>
+
+		<div id="patientProfileDialog" class="dialog" hidden>
+			<h3>Profile for <span id="profilePatientName"></span></h3>
+			<p id="patientMedicalHistory">Medical history details go here...</p>
+			<button onclick="closePatientProfile()">Close</button>
+		</div>
+		<link rel="stylesheet" href="md.css" />
+
+		<script src="script.js"></script>
+	</body>
+</html>

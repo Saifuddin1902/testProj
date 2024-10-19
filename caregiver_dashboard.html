@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Caregiver Dashboard - Care Assistance</title>
+		<link rel="stylesheet" href="cd.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Caregiver Dashboard</h1>
+			<nav>
+				<ul>
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#alerts">Alerts</a></li>
+					<li><a href="#care-plan">Care Plan</a></li>
+					<li><a href="#location">Location</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="overview" class="dashboard-section">
+				<h2>Patient Overview</h2>
+				<div class="patient-card" style="border-color: #ff6666">
+					<h3>John Doe</h3>
+					<p>Age: 75</p>
+					<p>Last Check-in: 2 hours ago</p>
+				</div>
+				<div class="patient-card" style="border-color: #66b3ff">
+					<h3>Jane Smith</h3>
+					<p>Age: 68</p>
+					<p>Last Check-in: 1 hour ago</p>
+				</div>
+				<div class="patient-card" style="border-color: #99e699">
+					<h3>Robert Lee</h3>
+					<p>Age: 72</p>
+					<p>Last Check-in: 30 minutes ago</p>
+				</div>
+			</section>
+			<section id="alerts" class="dashboard-section">
+				<h2>Alerts & Notifications</h2>
+				<ul id="alertList" class="alert-list">
+					<li class="alert critical">John Doe: Heart rate spike detected at 2:30 PM</li>
+					<li class="alert warning">Jane Smith: Missed afternoon medication dose</li>
+					<li class="alert info">Robert Lee: Upcoming doctor's appointment tomorrow at 10:00 AM</li>
+				</ul>
+			</section>
+			<section id="care-plan" class="dashboard-section">
+				<h2>Care Plan Management</h2>
+				<button class="care-button" data-patient="John Doe" onclick="openCarePlanDialog('John Doe')">Update Meal Plan</button>
+				<button class="care-button" data-patient="Jane Smith" onclick="openCarePlanDialog('Jane Smith')">Modify Exercise Routine</button>
+				<button class="care-button" data-patient="Robert Lee" onclick="openCarePlanDialog('Robert Lee')">Adjust Medication Schedule</button>
+			</section>
+			<section id="location" class="dashboard-section">
+				<h2>Location Tracking</h2>
+				<div id="map-placeholder" class="map">[Map with Patient Pins]</div>
+				<p>Last known location: <span id="lastLocation">Home</span></p>
+			</section>
+		</main>
+		<footer>
+			<button id="logEntryButton" onclick="openLogEntry()">Add Log Entry</button>
+		</footer>
+
+		<!-- Dialogs -->
+		<div id="carePlanDialog" class="dialog" hidden>
+			<form id="carePlanForm">
+				<h3>Update Care Plan for <span id="dialogPatientName"></span></h3>
+				<label>Meal Plan: <input type="text" id="mealPlanInput" /></label>
+				<label>Exercise Routine: <input type="text" id="exerciseInput" /></label>
+				<label>Medication Schedule: <input type="text" id="medicationInput" /></label>
+				<button type="submit">Save Changes</button>
+			</form>
+		</div>
+
+		<div id="logEntryDialog" class="dialog" hidden>
+			<form id="logEntryForm">
+				<h3>Add Log Entry</h3>
+				<textarea id="logEntryText" placeholder="Enter log entry details..."></textarea>
+				<button type="submit">Submit Log</button>
+			</form>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
